@@ -16,13 +16,32 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <title>Dashboard</title>
     <style>
-        body { display: flex; margin: 0; font-family: Arial; }
-        .sidebar {
-            width: 250px; background: #333; color: #fff; height: 100vh; padding: 20px;
+        body { 
+            display: flex;
+            margin: 0;
+            font-family: Arial; 
         }
-        .sidebar img { width: 100px; border-radius: 50%; }
-        .content { flex: 1; padding: 20px; }
-        a { color: #fff; text-decoration: none; display: block; margin: 10px 0; }
+        .sidebar {
+            width: 250px;
+            background: #333;
+            color: #fff;
+            height: 100vh;
+            padding: 20px;
+        }
+        .sidebar img { 
+            width: 100px;
+            border-radius: 50%;
+        }
+        .content { 
+            flex: 1;
+            padding: 20px; 
+        }
+        a { 
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
