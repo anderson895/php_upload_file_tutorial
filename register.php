@@ -10,21 +10,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password        = $_POST['password'];
     $confirmPassword = $_POST['confirm_password'];
 
-    // Server-side Confirm Password Validation
     if ($password !== $confirmPassword) {
         $message = "<div class='alert alert-danger'> Passwords do not match.</div>";
     } else {
-        // Hash password securely
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        //  Handle profile upload
         $profileName = "default.png";
         if (!empty($_FILES['profile']['name'])) {
             $profileName = time() . "_" . basename($_FILES['profile']['name']);
             move_uploaded_file($_FILES['profile']['tmp_name'], "uploads/" . $profileName);
         }
 
-        //  Check if username or email already exists
         $check = $pdo->prepare("SELECT COUNT(*) FROM user WHERE username = ? OR email = ?");
         $check->execute([$username, $email]);
         $exists = $check->fetchColumn();
@@ -32,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($exists > 0) {
             $message = "<div class='alert alert-danger'> Username or Email already taken. Try another.</div>";
         } else {
-            //  Insert new user
             $stmt = $pdo->prepare("INSERT INTO user (username,email,password,profile) VALUES (?,?,?,?)");
             if ($stmt->execute([$username, $email, $hashedPassword, $profileName])) {
                 $message = "<div class='alert alert-success'> Registration successful! <a href='login.php'>Login here</a></div>";

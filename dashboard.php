@@ -7,7 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Get logged in user info
 $stmt = $pdo->prepare("SELECT * FROM user WHERE user_id = ?");
 $stmt->execute([$_SESSION['user_id']]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
