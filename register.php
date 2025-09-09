@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="file" id="profile" name="profile" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-success w-100">Register</button>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
         </form>
 
         <div class="text-center mt-3">
