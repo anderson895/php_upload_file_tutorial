@@ -44,7 +44,7 @@ $users = $stmtUsers->fetchAll(PDO::FETCH_ASSOC);
 <title>Dashboard</title>
 
 <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <!-- Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -132,7 +132,7 @@ $users = $stmtUsers->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- Footer -->
   <footer>
-    <p>&copy; <?= date("Y") ?> My Dashboard. All Rights Reserved.</p>
+    <p>&copy; <?= date("Y") ?> DANNYLI. All Rights Reserved.</p>
   </footer>
 </div>
 
