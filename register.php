@@ -101,17 +101,22 @@ function validateForm() {
     let password = document.getElementById("password").value;
     let confirm  = document.getElementById("confirm_password").value;
 
+    // Check length requirement
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters long.");
+        return false;
+    }
+
+    // Check match requirement
     if (password !== confirm) {
         alert("Passwords do not match!");
         return false;
     }
-    if (password.length < 6) {
-        alert("Password must be at least 6 characters long.");
-        return false;
-    }
+
     return true;
 }
 </script>
+
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
